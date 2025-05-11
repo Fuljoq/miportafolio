@@ -1,5 +1,3 @@
-import  {useState,useEffect} from 'react'
-import './App.scss'
 import { PantallaCarga } from './components/PantallaCarga.jsx';
 
 
