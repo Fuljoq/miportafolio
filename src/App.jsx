@@ -124,7 +124,7 @@ function App() {
           <a href="https://www.instagram.com/joaquin_orlandau" target="_blank">
             <i className="fa-brands fa-instagram"></i>
           </a>
-          <a href="https://wa.me/1134372005" target="_blank">
+          <a href="https://wa.me/+5491134372005" target="_blank">
             <i className="fa-brands fa-whatsapp"></i>
           </a>
           <a href="mailto:joaquin.orlandau.rosso@hotmail.com" target="_blank">
