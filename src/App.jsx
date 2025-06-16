@@ -1,9 +1,22 @@
 import {useState , useEffect} from "react";
 import React from "react";
 import  PantallaCarga  from './components/PantallaCarga.jsx';
+import { useAnimateOnScroll } from './hooks/useAnimateOnScroll';
 import './App.scss';
 
 function App() {
+  // Hook de animación para cada sección
+  const [projectsRef, projectsIsVisible] = useAnimateOnScroll({ threshold: 0.1 });
+  const [skillsRef, skillsIsVisible] = useAnimateOnScroll({ threshold: 0.1 });
+  const [contactRef, contactIsVisible] = useAnimateOnScroll({ threshold: 0.1 });
+
+  const skills = [
+    { name: 'HTML', level: 5, icon: 'devicon-html5-plain colored' },
+    { name: 'CSS', level: 5, icon: 'devicon-css3-plain colored' },
+    { name: 'JavaScript', level: 5, icon: 'devicon-javascript-plain colored' },
+    { name: 'React', level: 4, icon: 'devicon-react-original colored' },
+    // Puedes agregar más habilidades aquí
+  ];
   const [lightMode, setlightMode] = useState(() => {
     return localStorage.getItem("theme") === "light";
   });
@@ -29,6 +42,9 @@ function App() {
 
       <header>
         <h1>Mi Portafolio</h1>
+      <a href="/CVOrlandauRossoJoaquin.pdf" target="_blank" rel="noopener noreferrer">
+  <button className="cv-button">📄 Ver CV</button>
+</a>
         <nav>
           <ul>
             <li>
@@ -39,6 +55,9 @@ function App() {
             </li>
             <li>
               <a href="#proyectos">Proyectos</a>
+            </li>
+            <li>
+              <a href="#habilidades">Habilidades</a>
             </li>
             <li>
               <a href="#contacto">Contacto</a>
@@ -54,10 +73,10 @@ function App() {
 
       <section id="inicio" className="seccion">
         <h2>Bienvenido</h2>
-        <p>Al portafolio de Joaquin Orlandau Rosso</p>
+        <p>Hola, soy Joaquín Orlandau Rosso. Desarrollador Front-End. Apasionado por crear soluciones web modernas y funcionales</p>
       </section>
 
-      <section id="proyectos" className="seccion">
+      <section id="proyectos" className={`seccion ${!projectsIsVisible ? 'hidden' : ''}`} ref={projectsRef}>
         <h2>Proyectos</h2>
 
         <div className="proyecto">
@@ -88,10 +107,10 @@ function App() {
         </div>
       </section>
 
-      <div className="descripcion-container">
+      <div id="sobre-mi" className="descripcion-container">
         <img
           src="./imgs/foto-curriculum.jpg"
-          alt=""
+          alt="Foto de perfil de Joaquín Orlandau Rosso"
           className="descripcion-container__imagen"
         />
         <div className="descripcion-container__textos">
@@ -111,14 +130,30 @@ function App() {
         </div>
       </div>
 
-      <section id="contacto" className="seccion">
+      <section id="habilidades" className={`seccion ${!skillsIsVisible ? 'hidden' : ''}`} ref={skillsRef}>
+        <h2>Habilidades</h2>
+        <div className="habilidades-container">
+          {skills.map((skill, index) => (
+            <div key={index} className="habilidad-item">
+              <h3><i className={skill.icon}></i> {skill.name}</h3>
+              <div className="progress-bar">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className={`progress-segment ${i < skill.level ? 'filled' : ''}`}></div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="contacto" className={`seccion ${!contactIsVisible ? 'hidden' : ''}`} ref={contactRef}>
         <h2>Contacto</h2>
         <p>Podes contactarme en mis redes o mi wssp.</p>
         <div className="redes-sociales">
           <a href="https://github.com/Fuljoq" target="_blank">
             <i className="fa-brands fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/" target="_blank">
+          <a href="https://www.linkedin.com/in/joaquin-orlandau-rosso-5b58b72b3/" target="_blank">
             <i className="fa-brands fa-linkedin"></i>
           </a>
           <a href="https://www.instagram.com/joaquin_orlandau" target="_blank">
@@ -134,7 +169,7 @@ function App() {
       </section>
 
       <footer>
-        <p>&copy; 2025 - Mi Portafolio</p>
+        <p>&copy; {new Date().getFullYear()} - Mi Portafolio</p>
       </footer>
     </>
   );

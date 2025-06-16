@@ -1,8 +1,57 @@
+/* Estilos para la sección de Habilidades */
+.habilidades-container {
+  display: flex;
+  flex-direction: column; /* Apilar las habilidades verticalmente */
+  gap: 25px; /* Espacio entre cada habilidad */
+  align-items: center; /* Centrar el contenedor de habilidades */
+  padding: 0 20px; /* Añadir padding lateral para que no toque los bordes en móvil */
+}
+
+.habilidad-item {
+  width: 100%; /* Ancho del item de habilidad */
+  max-width: 500px; /* Ancho máximo para que no se estire demasiado en pantallas grandes */
+  
+  h3 {
+    margin-bottom: 8px;
+    text-align: left;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el ícono y el texto */
+  }
+}
+
+.progress-bar {
+  display: flex;
+  gap: 8px; /* Espacio entre los segmentos */
+  height: 18px; /* Altura de la barra */
+}
+
+.progress-segment {
+  flex: 1; /* Para que todos los segmentos ocupen el mismo espacio */
+  background-color: #444; /* Color para los segmentos vacíos en modo oscuro */
+  border-radius: 5px;
+  transform: skewX(-25deg); /* Para darles la forma inclinada como en la imagen */
+  transition: background-color 0.3s ease;
+}
+
+.progress-segment.filled {
+  background-color: #20c997; /* Color verde azulado para los segmentos llenos */
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212;
+    background: linear-gradient(-45deg, #0b0f19, #121212, #1a2a45, #0b0f19);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
     color: white;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -196,3 +245,40 @@ footer {
       }
     }
   }
+  .cv-button {
+  background-color: #1e90ff;
+  color: white;
+  padding: 8px 16px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0f70d4;
+  }
+}
+
+/* Estilos para la animación de entrada */
+.seccion {
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .seccion.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
