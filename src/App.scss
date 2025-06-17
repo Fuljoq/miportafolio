@@ -56,6 +56,65 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .descripcion-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+        &__imagen {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        &__textos {
+            padding: 0 20px;
+            
+            &__p {
+                margin-bottom: 15px;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .proyecto {
+        padding: 15px;
+        margin: 15px 0;
+        
+        .botones-proyecto {
+            flex-direction: column;
+            gap: 10px;
+            
+            .boton-proyecto {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .tecnologias-proyecto {
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        i {
+            font-size: 1.5rem;
+        }
+    }
+
+    .seccion {
+        padding: 40px 20px;
+    }
+
+    header {
+        padding: 15px;
+        
+        nav ul {
+            display: none;
+        }
+    }
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -87,6 +146,59 @@ nav ul li a:hover {
     color: #f39c12;
 }
 
+nav ul li a.proyecto {
+    background: #292929;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+    }
+    
+    h3 {
+        color: #f39c12;
+        margin-bottom: 10px;
+    }
+    
+    p {
+        margin-bottom: 15px;
+        color: #ccc;
+    }
+    
+    .tecnologias-proyecto {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 15px;
+        
+        i {
+            font-size: 2rem;
+        }
+    }
+    
+    .botones-proyecto {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        
+        .boton-proyecto {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #20c997;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            
+            &:hover {
+                background: #15b084;
+            }
+        }
+    }
+}
+
 #modo-toggle {
     background: none;
     border: none;
@@ -97,6 +209,26 @@ nav ul li a:hover {
 .seccion {
     padding: 60px;
     text-align: center;
+}
+
+.botones-proyecto {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    
+    .boton-proyecto {
+        display: inline-block;
+        padding: 8px 16px;
+        background: #20c997;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        
+        &:hover {
+            background: #15b084;
+        }
+    }
 }
 
 .proyecto {
@@ -157,17 +289,28 @@ footer {
     margin-top: 10px;
 }
 
-.redes-sociales {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+/* Estilos base para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .redes-sociales {
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .redes-sociales a {
+    font-size: 30px;
+  }
 }
 
-.redes-sociales a {
-    font-size: 40px; /* Aumenta el tamaño de los íconos */
-    text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
+/* Estilos base para escritorio */
+@media screen and (min-width: 769px) {
+  .redes-sociales {
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .redes-sociales a {
+    font-size: 40px;
+  }
 }
 
 /* Colores personalizados */

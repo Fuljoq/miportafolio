@@ -81,13 +81,28 @@ function App() {
 
         <div className="proyecto">
           <h3>Proyecto 1 - Marssela Rosso</h3>
-          <p>Mi Primera pagina subida al publico</p>
-          <a
-            href="https://github.com/Fuljoq/Pf-Coderhouse.git"
-            target="_blank"
-          >
-            Ver en GitHub
-          </a>
+          <p>Tecnologías utilizadas:</p>
+          <div className="tecnologias-proyecto">
+            <i className="devicon-html5-plain colored"></i>
+            <i className="devicon-css3-plain colored"></i>
+            <i className="devicon-sass-original colored"></i>
+          </div>
+          <div className="botones-proyecto">
+            <a
+              href="https://github.com/Fuljoq/Pf-Coderhouse.git"
+              target="_blank"
+              className="boton-proyecto"
+            >
+              Ver en GitHub
+            </a>
+            <a
+              href="https://marsselarosso.netlify.app"
+              target="_blank"
+              className="boton-proyecto"
+            >
+              Ver Página
+            </a>
+          </div>
         </div>
 
         <div className="proyecto">
@@ -115,17 +130,14 @@ function App() {
         />
         <div className="descripcion-container__textos">
           <p className="descripcion-container__textos__p">
-            Cuento con años de experiencia continua en el campo de la
-            programación web, desarrollo de aplicaciones y servicios web en
-            diferentes tecnologías
+            Desarrollador Front End Junior especializado en la creación de interfaces web modernas y responsivas.
           </p>
           <p className="descripcion-container__textos__p">
-            Mi experiencia en desarrollo de software: Me estoy especializando en
-            Front end y Backend. he realizado webs en Javascript, React,
-            Next,Typescript, Html y Css.
-          </p>
-          <p className="descripcion-container__textos__p">
-            Estoy Buscando mi primera experiencia laboral.
+            Mi experiencia en desarrollo Front End incluye:
+            - Desarrollo de aplicaciones web con React.js
+            - Diseño y maquetación con HTML5 y CSS3
+            - Implementación de estilos con SASS
+            - Creación de componentes reutilizables
           </p>
         </div>
       </div>
@@ -153,7 +165,7 @@ function App() {
           <a href="https://github.com/Fuljoq" target="_blank">
             <i className="fa-brands fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/joaquin-orlandau-rosso-5b58b72b3/" target="_blank">
+          <a href="https://www.linkedin.com/in/joaquin-orlandau-rosso/" target="_blank">
             <i className="fa-brands fa-linkedin"></i>
           </a>
           <a href="https://www.instagram.com/joaquin_orlandau" target="_blank">
